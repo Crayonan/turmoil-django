@@ -1,15 +1,7 @@
-{%load static%}
 <div class="container thumbnail-container">
+    {% for thumbnail in thumbnails %}
     <figure>
-        <img src="{% static 'images/thumb_5.jpg' %}" alt="" />
+        <img src="{{ thumbnail.image.url }}" alt="{{ thumbnail.alt_text }}" />
     </figure>
-    <figure>
-        <img src="{% static 'images/thumb_5.jpg' %}" alt="" />
-    </figure>
-    <figure>
-        <img src="{% static 'images/thumb_5.jpg' %}" alt="" />
-    </figure>
-    <figure>
-        <img src="{% static 'images/thumb_5.jpg' %}" alt="" />
-    </figure>
+    {% endfor %}
 </div>

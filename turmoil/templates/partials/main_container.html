@@ -54,5 +54,11 @@
             </footer>
         </form>
     </div>
-    <div class="advertisement"></div>
+    <div class="advertisement">
+        {% for ad in advertisements %}
+            <a href="{{ ad.url }}">
+                <img src="{{ ad.image.url }}" alt="{{ ad.alt_text }}" />
+            </a>
+        {% endfor %}
+    </div>
 </aside>

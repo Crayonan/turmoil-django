@@ -1,6 +1,8 @@
+{% if notice %}
 <div class="container notice-container">
     <div class="notice">
         <i class="notice-icon">!</i>
-        <span>Important Message! Donec in posuere elit, nec aliquam mi.</span>
+        <span>{{ notice.message }}</span>
     </div>
 </div>
+{% endif %}

@@ -6,6 +6,7 @@ from django.utils.html import format_html
 @admin.register(NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
     list_display = ('name', 'url')
+    list_filter = ('class_name',)
 
 @admin.register(Notice)
 class NoticeAdmin(admin.ModelAdmin):

@@ -1,13 +1,5 @@
 <div class="navigation" role="navigation">
     {% for item in navbar_items %}
-        {% if item.name == "Play now" %}
-            <a href="{{ item.url }}" class="navigation-item play">
-                <span>
-                    <span>{{ item.name }}</span>
-                </span>
-            </a>
-        {% else %}
-            <a href="{{ item.url }}" class="navigation-item">{{ item.name }}</a>
-        {% endif %}
+        <a href="{{ item.url }}" class="{{ item.class_name }}">{{ item.name }}</a>
     {% endfor %}
 </div>

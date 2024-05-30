@@ -4,10 +4,15 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from image_cropping import ImageRatioField
 
-
 class NavbarItem(models.Model):
+    CLASS_CHOICES = [
+        ('navigation-item', 'Navigation Item'),
+        ('navigation-item play', 'Navigation Item Play'),        
+    ]
+
     name = models.CharField(max_length=100)
     url = models.URLField()
+    class_name = models.CharField(max_length=50, choices=CLASS_CHOICES, default='navigation-item')
 
     def __str__(self):
         return self.name

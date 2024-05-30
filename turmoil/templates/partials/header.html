@@ -1,9 +1,9 @@
-<!-- header.html -->
 <header class="header-top">
     <div class="logo">
         <a href="#">
-            {% load static %}
-            <img src="{% static 'images/logo.png' %}" alt="Misthalin" title="Misthalin" />
+            {% if site_logo %}
+                <img src="{{ site_logo.image.url }}" alt="{{ site_logo.alt_text }}" title="{{ site_logo.alt_text }}" />
+            {% endif %}
         </a>
     </div>
 </header>

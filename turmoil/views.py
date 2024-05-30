@@ -1,14 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Article, Slider, NavbarItem, Notice, Thumbnail, SiteLogo, Advertisement
+from .models import NavbarItem, Notice, Thumbnail, SiteLogo, Advertisement, Article, Slider
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-
-def home(request):
-    articles = Article.objects.all()
-    sliders = Slider.objects.order_by('-created_at')[:4]  # Fetch the latest 4 entries
-    return render(request, 'home.html', {'articles': articles, 'sliders': sliders})
 
 def home(request):
     context = {
@@ -17,6 +12,8 @@ def home(request):
         'thumbnails': Thumbnail.objects.all(),
         'site_logo': SiteLogo.objects.first(),
         'advertisements': Advertisement.objects.all(),
+        'articles': Article.objects.all(),
+        'sliders': Slider.objects.all(),
     }
     return render(request, 'home.html', context)
 
