@@ -1,7 +1,7 @@
 <div class="left-container">
     <div class="news-container">
         {% for article in articles %}
-        <article class="news-article">
+        <article class="news-article {% if forloop.first %} active {% else %} closed {% endif %}">
             <header class="header-title">
                 <figure>
                     <img src="{{ article.thumbnail.url }}" alt="" />
@@ -23,7 +23,7 @@
                         <img src="{{ article.image.url }}" alt="" />
                     </figure>
                 </header>
-                <p>{{ article.content|safe }}</p>
+                <p class="article-content">{{ article.content|safe }}</p>
                 <footer class="news-bottom">
                     <p>Posted by <span>{{ article.author }}</span>, {{ article.date }} {{ article.comments_count }} comments</p>
                 </footer>
@@ -37,30 +37,24 @@
         <header class="small-header">
             <h2>Login</h2>
         </header>
-        <form method="post" action="{% url 'login' %}" class="login-form">
+        <form method="post" action="{% url 'login' %}" class="login-form" autocomplete="on">
             {% csrf_token %}
             <fieldset>
-                <legend>Login</legend>
-                <div class="mb-1">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+                <div class="mb-3">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autocomplete="username">
                 </div>
-                <div class="mb-1">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="•••••••••••••" required>
+                <div class="mb-3">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="•••••••••••••" required autocomplete="current-password">
                 </div>
-                <div class="mb-1 form-check">
+                <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
                     <label class="form-check-label" for="remember_me">Remember me</label>
                 </div>
-                <div class="mb-1">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                    <a href="#" class="btn btn-secondary">Sign up</a>
-                    <a href="#" class="btn btn-link">Forgot Password?</a>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" style="background-color: #262427; border-color: #262427;">Sign in</button>
                 </div>
             </fieldset>
         </form>
-        
     </div>
     <div class="advertisement">
         {% for ad in advertisements %}
