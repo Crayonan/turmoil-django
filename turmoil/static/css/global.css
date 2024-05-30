@@ -1,8 +1,11 @@
-@import url(reset.css);
-@import url(font-awesome.min.css);
+@import url(styles/reset.css);
+@import url(styles/font-awesome.min.css);
+@import url(styles/main_content.css);
 
 @import url(https://db.onlinewebfonts.com/c/f1cfb0d208038e21ad90267089ab2584?family=Felix+Titling+V2);
 @import url(https://db.onlinewebfonts.com/c/f929174bda22c1821db22ab9760b082a?family=Baskerville);
+
+
 
 html {
     min-width: 1080px;
@@ -10,7 +13,11 @@ html {
 
 body {
     background: #000 url(../images/background.jpg) center top no-repeat;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    max-width: 995px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px;
 }
 
 a {
@@ -18,9 +25,11 @@ a {
 }
 
 .container {
-    max-width: 996px;
+    max-width: 1070px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding: 0px;
+    /* margin: 0 auto; */
 }
 
 .header-top {
@@ -33,11 +42,11 @@ a {
     background: url(../images/navigation.jpg) no-repeat;
     width: 996px;
     height: 69px;
-    margin: 0 auto;
+    margin: 0px;
     display: table;
     position: relative;
     z-index: 100;
-    padding: 0 20px 0 6px;
+    /* padding: 0 20px 0 6px; */
 }
 
 .navigation .navigation-item {
@@ -99,6 +108,12 @@ a {
     float: left;
 }
 
+/* .slide-div {
+    width: 275px;
+    height: 300px;
+    background: rgba(76, 175, 80, 0.3);
+} */
+
 .slide-side .slide-action {
     background: url(../images/slide_side.jpg) no-repeat;
     width: 276px;
@@ -146,6 +161,10 @@ a {
     font-size: 11px;
     color: #DDD;
     text-transform: uppercase;
+}
+
+.container .container.clear-fix.slider-wrap {
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .slider-container {
@@ -207,7 +226,7 @@ a {
     background: url(../images/notice.jpg) no-repeat;
     width: 991px;
     height: 38px;
-    margin: 5px 1px;
+    margin: 0px;
     padding: 8px 9px;
 }
 
@@ -241,8 +260,9 @@ a {
 .thumbnail-container {
     background: #0D0D0D;
     text-align: center;
-    margin: -5px 0 -4px;
-    padding: 2px 0;
+    margin: 0px;
+    /* padding: 2px 0; */
+    width: 991px;
 }
 
 .thumbnail-container figure {
@@ -256,297 +276,18 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+
     height: 100%;
     content: '';
     display: block;
-}
-
-.main-container {
-    padding: 0 3px;
-    min-height: 924px;
-}
-
-/* .main-container  {
-    background: url(../images/content_background.jpg);
-    width: 655px;
-    min-height: 924px;
-    float: left;
-    position: relative;
-    z-index: 100;
-} */
-
-.left-container {
-    background: url(../images/content_background.jpg);
-    width: 655px;
-    min-height: 924px;
-    float: left;
-    position: relative;
-    z-index: 100;
-}
-
-.header-title {
-    background: url(../images/header.png) no-repeat;
-    width: 655px;
-    height: 63px;
-    padding: 8px 26px 0;
-}
-
-.header-title figure {
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
-    display: inline-block;
-    float: left;
-}
-
-.header-title h2 {
-    display: inline-block;
-    vertical-align: top;
-    font-family: 'Felix Titling V2';
-    font-size: 14px;
-    margin: 11px 0 0 10px;
-    width: 100%;
-    max-width: 420px;
-    height: 13px;
-    float: left;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 1px #383838, 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.header-title h3 {
-    display: inline;
-    float: left;
-    margin-left: 10px;
-    margin-top: 5px;
-    color: #bf8d20;
-    font-family: 'Felix Titling V2';
-    font-size: 10px;
-}
-
-.header-title .meta-data {
-    font: normal normal 10px Arial, sans-serif;
-    text-align: right;
-    float: right;
-    color: #7A747A;
-    margin-top: -7px;
-}
-
-.news-article {
-    overflow: hidden;
-    height: 437px;
-    transition: height 500ms ease-in-out;
-}
-
-.news-article:not(:last-of-type) {
-    border-bottom: 2px solid rgba(22, 21, 23, 0.9);
-}
-
-.news-article .text-content {
-    font: normal normal 11px Calibri, Arial, sans-serif;
-    padding: 28px 28px 12px;
-    line-height: 20px;
-    color: #9B8A9F;
-    text-shadow: 1px 1px 1px #000;
-}
-
-.news-article .text-content .text-header h2 {
-    font-family: 'Felix Titling V2';
-    font-size: 18px;
-    height: 24px;
-    display: block;
-}
-
-.news-article .text-content .text-header figure {
-    margin-bottom: 22px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.news-article .text-content .text-header .line {
-    background: #F4F4F4;
-    width: 100%;
-    height: 2px;
-    border-bottom: 1px solid #B5B5B5;
-    margin-bottom: 14px;
-}
-
-.news-article .text-content .text-header .pxg-set {
-    line-height: 27px;
-}
-
-.news-article .text-content .text-header .pxg-set, .news-article .text-content .text-header .pxg-set s {
-    height: 22px !important;
-}
-
-.news-bottom {
-    padding-top: 20px;
-    color: #5a535a;
-    text-shadow: none;
-}
-
-.news-bottom p span {
-    color: #877D87;
-    font-weight: bold;
-}
-
-.news-article.closed {
-    height: 63px;
-}
-
-.news-article.closed .header-title {
-    cursor: pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.right-container {
-    background: url(../images/sidebar_background.jpg);
-    width: 335px;
-    min-height: 924px;
-    float: right;
-}
-
-.small-header {
-    background: url(../images/small_header.png) 0 0 / 100% auto no-repeat;
-    width: 335px;
-    height: 38px;
-    padding: 14px 25px 0;
-}
-
-.small-header h2 {
-    font-family: 'Felix Titling V2';
-    font-size: 14px;
-    color: #DDD;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 1px #383838, 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-input[type="text"], input[type="password"] {
-    background: url(../images/input.png) no-repeat;
-    width: 297px;
-    height: 53px;
-    outline: none;
-    border: none;
-    display: block;
-    margin: 0 auto -4px;
-    font: normal normal 13px Arial, sans-serif;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.73);
-    color: #756679;
-    padding: 27px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.login-form {
-    margin-top: 10px;
-}
-
-::-webkit-input-placeholder {
-    color: #756679;
-}
-
-:focus::-webkit-input-placeholder {
-    color: transparent;
-    text-shadow: none;
-}
-
-.button {
-    background: url(../images/small_button.png) no-repeat;
-    width: 79px;
-    height: 42px;
-    display: inline-block;
-    outline: none;
-    border: none;
-    font: normal normal 12px Arial, sans-serif;
-    color: #5F5C5F;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
-    text-align: center;
-    padding: 0;
-    line-height: 45px;
-}
-
-.button.button-purple {
-    background-image: url(../images/small_button2.png);
-    color: #68586B;
-}
-
-.login-form footer {
-    padding-left: 20px;
-}
-
-.login-form footer .button + .button {
-    margin-left: -12px;
-}
-
-.login-form .remember {
-    float: right;
-    color: #585359;
-    padding-right: 28px;
-    margin-top: 15px;
-}
-
-.login-form .remember span {
-    margin-left: 4px;
-    position: relative;
-    top: -2px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
-    font: normal normal 12px Arial, sans-serif;
-}
-
-.checkbox-group {
-    display: inline-block;
-}
-
-.checkbox-group label {
-    background: #090809;
-    width: 14px;
-    height: 14px;
-    color: #3E3641;
-    display: inline-block;
-    border: 1px solid #3E3641;
-    border-radius: 1px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.checkbox-group input[type="checkbox"] + label:after {
-    font-family: 'FontAwesome';
-    font-size: 12px;
-    content: "\f00c";
-    color: transparent;
-    position: relative;
-    top: -1px;
-    -webkit-transition: color 200ms ease;
-    -moz-transition: color 200ms ease;
-    -ms-transition: color 200ms ease;
-    -o-transition: color 200ms ease;
-    transition: color 200ms ease;
-}
-
-.checkbox-group input[type="checkbox"]:checked + label:after {
-    color: #3E3641;
-}
-
-.advertisement {
-    background: url(../images/advertisement.png) no-repeat;
-    width: 355px;
-    height: 276px;
-    margin: 0 -10px;
 }
 
 .footer-bottom {
     background: url(../images/footer.png) no-repeat;
     width: 996px;
     height: 100px;
-    margin: 0 auto;
-    padding: 0 8px 10px;
+    margin: 0px auto;
+    padding: 0px;
     font: normal normal 11px Calibri, Arial, sans-serif;
     color: #877A8D;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);

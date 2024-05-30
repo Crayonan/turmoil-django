@@ -1,5 +1,5 @@
 <div class="navigation" role="navigation">
     {% for item in navbar_items %}
-        <a href="{{ item.url }}" class="{{ item.class_name }}">{{ item.name }}</a>
+        <a href="{{ item.url }}" class="{{ item.class_name }}"><span>{{ item.name }}</span></a>
     {% endfor %}
 </div>

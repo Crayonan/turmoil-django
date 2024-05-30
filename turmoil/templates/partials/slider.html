@@ -1,18 +1,20 @@
 <!-- templates/partials/slider.html -->
 <div class="container clear-fix slider-wrap" id="slider_container">
-    <aside class="slide-side">
-        {% for slider in sliders %}
-        <a href="#" class="slide-action">
-            <figure>
-                <img src="{{ slider.side_image.url }}" alt="" />
-            </figure>
-            <div class="text-content">
-                <h2>{{ slider.side_title }}</h2>
-                <h3>{{ slider.side_subtitle }}</h3>
-            </div>
-        </a>
-        {% endfor %}
-    </aside>
+    <div class="slide-div">    
+        <aside class="slide-side">
+            {% for slider in sliders %}
+            <a href="#" class="slide-action">
+                <figure>
+                    <img src="{{ slider.side_image.url }}" alt="" />
+                </figure>
+                <div class="text-content">
+                    <h2>{{ slider.side_title }}</h2>
+                    <h3>{{ slider.side_subtitle }}</h3>
+                </div>
+            </a>
+            {% endfor %}
+        </aside>
+    </div>
     <div class="slider-container">
         <div class="slides">
             {% for slider in sliders %}
