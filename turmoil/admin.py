@@ -1,7 +1,27 @@
 from django.contrib import admin
-from .models import Article, Slider
+from .models import Article, Slider, NavbarItem, Notice, Thumbnail, SiteLogo, Advertisement
 from image_cropping import ImageCroppingMixin
 from django.utils.html import format_html
+
+@admin.register(NavbarItem)
+class NavbarItemAdmin(admin.ModelAdmin):
+    list_display = ('name', 'url')
+
+@admin.register(Notice)
+class NoticeAdmin(admin.ModelAdmin):
+    list_display = ('message',)
+
+@admin.register(Thumbnail)
+class ThumbnailAdmin(admin.ModelAdmin):
+    list_display = ('alt_text', 'image')
+
+@admin.register(SiteLogo)
+class SiteLogoAdmin(admin.ModelAdmin):
+    list_display = ('alt_text', 'image')
+
+@admin.register(Advertisement)
+class AdvertisementAdmin(admin.ModelAdmin):
+    list_display = ('alt_text', 'image', 'url')
 
 class CustomAdminMixin:
     class Media:

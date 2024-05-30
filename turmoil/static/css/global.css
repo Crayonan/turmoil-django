@@ -50,11 +50,12 @@ a {
 
 .navigation {
     background: url(../images/navigation.jpg) no-repeat;
-    width: 996px;
+    max-width: 996px;
     height: 69px;
     margin: 0 auto;
-    display: table;
-    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     z-index: 100;
     padding: 0 20px 0 6px;
 }

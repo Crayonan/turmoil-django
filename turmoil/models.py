@@ -4,6 +4,42 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from image_cropping import ImageRatioField
 
+
+class NavbarItem(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+class Notice(models.Model):
+    message = models.TextField()
+
+    def __str__(self):
+        return self.message[:50]  # Display the first 50 characters
+
+class Thumbnail(models.Model):
+    image = models.ImageField(upload_to='thumbnails/')
+    alt_text = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.alt_text or "Thumbnail"
+
+class SiteLogo(models.Model):
+    image = models.ImageField(upload_to='logos/')
+    alt_text = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.alt_text or "Site Logo"
+
+class Advertisement(models.Model):
+    image = models.ImageField(upload_to='ads/')
+    url = models.URLField()
+    alt_text = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.alt_text or "Advertisement"
+
 class Article(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
