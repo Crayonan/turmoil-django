@@ -1,0 +1,29 @@
+<!-- templates/partials/slider.html -->
+<div class="container clear-fix slider-wrap" id="slider_container">
+    <aside class="slide-side">
+        {% for slider in sliders %}
+        <a href="#" class="slide-action">
+            <figure>
+                <img src="{{ slider.side_image.url }}" alt="" />
+            </figure>
+            <div class="text-content">
+                <h2>{{ slider.side_title }}</h2>
+                <h3>{{ slider.side_subtitle }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </aside>
+    <div class="slider-container">
+        <div class="slides">
+            {% for slider in sliders %}
+            <div class="slide">
+                <div class="text-content">
+                    <h2>{{ slider.slide_title }}</h2>
+                    <h3>{{ slider.slide_subtitle }}</h3>
+                </div>
+                <img src="{{ slider.slide_image.url }}" alt="" />
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
