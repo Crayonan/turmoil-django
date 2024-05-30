@@ -1,7 +1,29 @@
 <div class="container thumbnail-container">
-    {% for thumbnail in thumbnails %}
-    <figure>
-        <img src="{{ thumbnail.image.url }}" alt="{{ thumbnail.alt_text }}" />
-    </figure>
-    {% endfor %}
+<!-- templates/partials/gallery.html -->
+    <div class="row flex-row flex-nowrap overflow-auto">
+        {% for thumbnail in thumbnails %}
+        <div class="col-3">
+            <div class="card">
+                <img src="{{ thumbnail.image.url }}" class="card-img-top" alt="{{ thumbnail.alt_text }}" data-bs-toggle="modal" data-bs-target="#imageModal{{ forloop.counter }}">
+            </div>
+        </div>
+
+        <!-- Modal for each thumbnail -->
+        <div class="modal fade" id="imageModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ thumbnail.alt_text }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ thumbnail.image.url }}" class="img-fluid" alt="{{ thumbnail.alt_text }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 </div>

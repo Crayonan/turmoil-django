@@ -3,28 +3,18 @@
     <div class="social">
         {% load static %}
         <a href="#" target="_blank">
-            <img src="{% static 'images/facebook.png' %}" alt="Facebook" />
-        </a>
-        <a href="#" target="_blank">
-            <img src="{% static 'images/twitter.png' %}" alt="Twitter" />
-        </a>
-        <a href="#" target="_blank">
-            <img src="{% static 'images/youtube.png' %}" alt="YouTube" />
+            <i class="fas fa-camera fa-lg"></i>
         </a>
     </div>
     <div class="separator"></div>
     <p class="reserved">
         <span>All rights reserved</span>
         <br />
-        <span>Designed by Ray | Coded by <a href="http://apachenick/me" target="_blank">Apache Ah64</a></span>
+        <span>Web-development by Nyle | Server development by Mercy</span>
     </p>
     <div class="links">
-        <a href="#">Home</a>
-        <a href="#">Community</a>
-        <a href="#">Store</a>
-        <a href="#">Play</a>
-        <a href="#">Voting</a>
-        <a href="#">News</a>
-        <a href="#">Contact</a>
+        {% for item in navbar_items %}
+        <a href="{{ item.url }}">{{ item.name }}</a>
+        {% endfor %}
     </div>
 </footer>

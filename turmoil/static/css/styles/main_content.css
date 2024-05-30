@@ -142,7 +142,7 @@
 
 .small-header {
     background: url(../../images/small_header.png) 0 0 / 100% auto no-repeat;
-    width: 275px;
+    width: 305px;
     height: 38px;
     padding: 7px 20px 0;
 }
@@ -211,9 +211,11 @@
 }
 
 .right-container .side-block {
-    background: url(../../images/advertisement.png)
+    background: url(../../images/advertisement.png);
+    background-size: 100% 100%;
+    width: 335px;
     background-color: #303030; 
-    padding: 20px; 
+    padding: 15px; 
     border-radius: 5px;
 }
 
