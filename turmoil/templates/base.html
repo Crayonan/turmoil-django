@@ -3,24 +3,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Misthalin{% endblock %}</title>
+    <title>{% block title %}Turmoil{% endblock %}</title>
     {% load static %}
     <link href="{% static 'css/global.css' %}" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css" integrity="sha512-087vysR/jM0N5cp13Vlp+ZF9wx6tKbvJLwPO8Iit6J7R+n7uIMMjg37dEgexOshDmDITHYY5useeSmfD1MYiQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="container">
     {% include 'partials/header.html' %}
     {% include 'partials/navigation.html' %}
-    
     <div class="container clear-fix" id="content">
         {% block content %}{% endblock %}
     </div>
-    
+    <div class="main-container">
+        {% include 'partials/main_container.html' %}
+
+    </div>
+</div>
+<div class="footer-bottom">
     {% include 'partials/footer.html' %}
 </div>
 <script src="{% static 'js/pxgradient-1.0.3.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/neo.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/global.js' %}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.js" integrity="sha512-lR8d1BXfYQuiqoM/LeGFVtxFyspzWFTZNyYIiE5O2CcAGtTCRRUMLloxATRuLz8EmR2fYqdXYlrGh+D6TVGp3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

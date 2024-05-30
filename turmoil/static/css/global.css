@@ -283,10 +283,20 @@ a {
 
 .main-container {
     padding: 0 3px;
+    min-height: 924px;
 }
 
-.main-container .left-container {
-    background: url(../images/content_background.jpg) repeat-y;
+/* .main-container  {
+    background: url(../images/content_background.jpg);
+    width: 655px;
+    min-height: 924px;
+    float: left;
+    position: relative;
+    z-index: 100;
+} */
+
+.left-container {
+    background: url(../images/content_background.jpg);
     width: 655px;
     min-height: 924px;
     float: left;
@@ -414,7 +424,7 @@ a {
 }
 
 .right-container {
-    background: url(../images/sidebar_background.jpg) repeat-y;
+    background: url(../images/sidebar_background.jpg);
     width: 335px;
     min-height: 924px;
     float: right;
@@ -560,12 +570,13 @@ input[type="text"], input[type="password"] {
     color: #877A8D;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     position: relative;
+    display: block;
 }
 
-.social {
+/* .social {
     margin-top: -1px;
     padding-left: 20px;
-}
+} */
 
 .social img {
     margin: 0 -15px;

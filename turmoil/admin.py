@@ -5,10 +5,15 @@ from django.utils.html import format_html
 
 class CustomAdminMixin:
     class Media:
-        js = ('js/image_preview.js',)
+        js = ('https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.js',
+              'js/image_preview.js',)
+        css = {
+            'all': ('https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css',)
+        }
 
 @admin.register(Article)
 class ArticleAdmin(CustomAdminMixin, ImageCroppingMixin, admin.ModelAdmin):
+    change_form_template = 'admin/change_form.html'
     list_display = ('title', 'date', 'author')
     search_fields = ('title', 'subtitle', 'author')
     readonly_fields = ('thumbnail_preview', 'image_preview')
@@ -27,6 +32,7 @@ class ArticleAdmin(CustomAdminMixin, ImageCroppingMixin, admin.ModelAdmin):
 
 @admin.register(Slider)
 class SliderAdmin(CustomAdminMixin, ImageCroppingMixin, admin.ModelAdmin):
+    change_form_template = 'admin/change_form.html'
     list_display = ('slide_title', 'created_at')
     search_fields = ('slide_title', 'side_title')
     readonly_fields = ('slide_image_preview', 'side_image_preview')

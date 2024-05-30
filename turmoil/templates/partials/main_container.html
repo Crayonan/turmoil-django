@@ -1,0 +1,58 @@
+<div class="left-container">
+    <div class="news-container">
+        {% for article in articles %}
+        <article class="news-article">
+            <header class="header-title">
+                <figure>
+                    <img src="{{ article.thumbnail.url }}" alt="" />
+                </figure>
+                <h2>{{ article.title }}</h2>
+                <br />
+                <h3>{{ article.subtitle }}</h3>
+                <p class="meta-data">
+                    <span>{{ article.date }}</span>
+                    <br />
+                    <span>News & announcements | by <span>{{ article.author }}</span></span>
+                </p>
+            </header>
+            <div class="text-content">
+                <header class="text-header">
+                    <h2>{{ article.title }}</h2>
+                    <div class="line"></div>
+                    <figure>
+                        <img src="{{ article.image.url }}" alt="" />
+                    </figure>
+                </header>
+                <p>{{ article.content|safe }}</p>
+                <footer class="news-bottom">
+                    <p>Posted by <span>{{ article.author }}</span>, {{ article.date }} {{ article.comments_count }} comments</p>
+                </footer>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+<aside class="right-container">
+    <div class="side-block">
+        <header class="small-header">
+            <h2>Login</h2>
+        </header>
+        <form method="post" action="{% url 'login' %}" class="login-form">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" />
+            <input type="password" name="password" placeholder="•••••••••••••" />
+            <footer>
+                <input type="submit" value="Sign in" class="button" />
+                <a href="#" class="button button-purple">Sign up</a>
+                <div class="remember">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember_me" class="hidden" />
+                        <label for="remember_me"></label>
+                    </div>
+                    <span>Remember me</span>
+                </div>
+            </footer>
+        </form>
+    </div>
+    <div class="advertisement"></div>
+</aside>

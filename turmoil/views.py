@@ -27,4 +27,4 @@ def custom_login(request):
     else:
         form = AuthenticationForm()
     
-    return render(request, 'partials/right_container.html', {'form': form})
+    return render(request, 'partials/main_container.html', {'form': form})

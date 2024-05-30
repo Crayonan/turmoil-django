@@ -1,0 +1,23 @@
+{
+  "name": "django_homepage",
+  "version": "1.0.0",
+  "description": "turmoil-webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crayonan/turmoil-django.git"
+  },
+  "keywords": [
+    "django",
+    "js"
+  ],
+  "author": "Nyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crayonan/turmoil-django/issues"
+  },
+  "homepage": "https://github.com/Crayonan/turmoil-django#readme"
+}
